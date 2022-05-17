@@ -1,15 +1,17 @@
 import s from './s.module.css'
 import { useNavigate } from 'react-router-dom';
-const Header = (title) => {
+
+
+const Header = ({title}) => {
 
 const navigate = useNavigate();
 const handleClick = () => {
-    navigate.push('/HomePage')
+    navigate('/HomePage')
 }
 
     return  (
         
-            <header className={s.header}>
+            <header>
                 <p> {title}</p>
                 <button onClick={handleClick}>На главную</button>
             </header>
