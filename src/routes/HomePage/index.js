@@ -1,12 +1,12 @@
-import cn from 'classnames';
-import Header from '../../components/Header';
-import { Route, RouteMatch, Link, Switch, Router, Routes } from 'react-router-dom';
+// import cn from 'classnames';
+// import Header from '../../components/Header';
+import { Link} from 'react-router-dom';
 const Homepage = () => {
     return (
         <>
-            <Header
+            {/* <Header
                 title = "Домашняя страница">
-            </Header>
+            </Header> */}
           <div className='content'> 
             <div className='btn-wrapper'> 
                 <Link to="/TimePage">Посмотреть время</Link>
