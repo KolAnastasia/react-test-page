@@ -28,28 +28,22 @@ const WeatherPage = () => {
        fetchData()
      }, [])
 
-    const currentWeather = Object.values(weather);
-    const currentWeatherValues = currentWeather[4];
-
-
-      // const weather = Array.from(weatherObj);
+    const objWeather = Object.values(weather);
+    const currentWeatherValues = objWeather[4];
+    const currentWeather = currentWeatherValues && currentWeatherValues.weather; 
+    const currentWeatherTemp = currentWeatherValues && currentWeatherValues.temp; 
+    const currentWeatherDesc = currentWeather && currentWeather[0].description;
+    const currentWeatherIconId = currentWeather && currentWeather[0].icon;
+    
+    
     return (
         <>
-              <Header title="weatherPage"></Header>
-              <div key={weather.current}>
-
-                 {/* { console.log(weather.current)} */}
-                  </div>
-                <p> 
-          
-                    {/* {  console.log("2")}
-                   {  console.log(Object.values(weather))} */}
-                   {  console.log(currentWeatherValues)}  
-                   {  console.log("currentWeatherValues")}  
-                   {  console.log(currentWeather[4])}  
-                   {console.log("1")}
-           
-                </p>
+          <Header title="weatherPage"></Header>
+          <p> Температура воздуха: {Math.trunc(currentWeatherTemp - 272)}</p>
+          <p> 
+            {currentWeatherDesc} 
+            <img src={`http://openweathermap.org/img/wn/${currentWeatherIconId}.png`} />
+          </p>
         </>
         
     )
